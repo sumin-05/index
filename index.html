@@ -20,9 +20,7 @@
     --font-serif: 'Noto Serif KR', serif;
     --font-sans: 'Noto Sans KR', sans-serif;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     background: var(--bg);
     color: var(--text);
@@ -30,8 +28,6 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
-
-  /* 배경 그리드 */
   body::before {
     content: '';
     position: fixed;
@@ -43,7 +39,6 @@
     pointer-events: none;
     z-index: 0;
   }
-
   .container {
     max-width: 860px;
     margin: 0 auto;
@@ -51,21 +46,17 @@
     position: relative;
     z-index: 1;
   }
-
-  /* 헤더 */
   header {
     padding: 48px 0 32px;
     border-bottom: 1px solid var(--border);
     margin-bottom: 48px;
   }
-
   .logo {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 20px;
   }
-
   .logo-mark {
     width: 36px;
     height: 36px;
@@ -79,7 +70,6 @@
     color: var(--bg);
     font-family: var(--font-serif);
   }
-
   .logo-text {
     font-family: var(--font-serif);
     font-size: 20px;
@@ -87,11 +77,7 @@
     color: var(--text);
     letter-spacing: -0.5px;
   }
-
-  .logo-text span {
-    color: var(--accent);
-  }
-
+  .logo-text span { color: var(--accent); }
   h1 {
     font-family: var(--font-serif);
     font-size: clamp(28px, 5vw, 42px);
@@ -101,20 +87,13 @@
     color: var(--text);
     margin-bottom: 12px;
   }
-
-  h1 em {
-    font-style: normal;
-    color: var(--accent);
-  }
-
+  h1 em { font-style: normal; color: var(--accent); }
   .subtitle {
     font-size: 15px;
     color: var(--text-muted);
     font-weight: 300;
     line-height: 1.6;
   }
-
-  /* 폼 영역 */
   .form-section {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -122,7 +101,6 @@
     padding: 32px;
     margin-bottom: 24px;
   }
-
   .section-label {
     font-size: 11px;
     font-weight: 700;
@@ -131,34 +109,23 @@
     text-transform: uppercase;
     margin-bottom: 20px;
   }
-
   .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
-
-  .form-grid.three {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .form-grid.full {
-    grid-template-columns: 1fr;
-  }
-
+  .form-grid.three { grid-template-columns: 1fr 1fr 1fr; }
   .field {
     display: flex;
     flex-direction: column;
     gap: 8px;
   }
-
   label {
     font-size: 12px;
     font-weight: 500;
     color: var(--text-muted);
     letter-spacing: 0.5px;
   }
-
   input, select, textarea {
     background: var(--surface2);
     border: 1px solid var(--border);
@@ -171,16 +138,11 @@
     transition: border-color 0.2s, box-shadow 0.2s;
     width: 100%;
   }
-
-  input::placeholder, textarea::placeholder {
-    color: var(--text-dim);
-  }
-
+  input::placeholder, textarea::placeholder { color: var(--text-dim); }
   input:focus, select:focus, textarea:focus {
     border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(184,240,96,0.08);
   }
-
   select {
     cursor: pointer;
     appearance: none;
@@ -189,24 +151,13 @@
     background-position: right 14px center;
     padding-right: 36px;
   }
-
-  select option {
-    background: var(--surface2);
-  }
-
-  textarea {
-    resize: vertical;
-    min-height: 80px;
-    line-height: 1.6;
-  }
-
-  /* 톤 선택 버튼 */
+  select option { background: var(--surface2); }
+  textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
   .tone-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
   }
-
   .tone-btn {
     background: var(--surface2);
     border: 1px solid var(--border);
@@ -219,26 +170,14 @@
     font-family: var(--font-sans);
     color: var(--text-muted);
   }
-
-  .tone-btn:hover {
-    border-color: var(--accent);
-    color: var(--text);
-  }
-
+  .tone-btn:hover { border-color: var(--accent); color: var(--text); }
   .tone-btn.active {
     background: rgba(184,240,96,0.1);
     border-color: var(--accent);
     color: var(--accent);
     font-weight: 500;
   }
-
-  .tone-emoji {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 4px;
-  }
-
-  /* 생성 버튼 */
+  .tone-emoji { display: block; font-size: 20px; margin-bottom: 4px; }
   .generate-btn {
     width: 100%;
     background: var(--accent);
@@ -258,17 +197,12 @@
     margin-top: 8px;
     letter-spacing: -0.3px;
   }
-
   .generate-btn:hover {
     background: var(--accent2);
     transform: translateY(-1px);
     box-shadow: 0 8px 24px rgba(184,240,96,0.2);
   }
-
-  .generate-btn:active {
-    transform: translateY(0);
-  }
-
+  .generate-btn:active { transform: translateY(0); }
   .generate-btn:disabled {
     background: var(--surface2);
     color: var(--text-dim);
@@ -276,23 +210,14 @@
     transform: none;
     box-shadow: none;
   }
-
-  /* 로딩 */
-  .loading {
-    display: none;
-    text-align: center;
-    padding: 48px 0;
-  }
-
+  .loading { display: none; text-align: center; padding: 48px 0; }
   .loading.show { display: block; }
-
   .loading-dots {
     display: flex;
     gap: 8px;
     justify-content: center;
     margin-bottom: 16px;
   }
-
   .loading-dots span {
     width: 8px;
     height: 8px;
@@ -300,41 +225,27 @@
     border-radius: 50%;
     animation: bounce 1.2s infinite;
   }
-
   .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
   .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
-
   @keyframes bounce {
     0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
     40% { transform: translateY(-8px); opacity: 1; }
   }
-
-  .loading-text {
-    font-size: 14px;
-    color: var(--text-muted);
-  }
-
-  /* 결과 영역 */
-  .results {
-    display: none;
-  }
-
+  .loading-text { font-size: 14px; color: var(--text-muted); }
+  .results { display: none; }
   .results.show { display: block; }
-
   .result-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
   }
-
   .result-title {
     font-family: var(--font-serif);
     font-size: 22px;
     font-weight: 700;
     color: var(--text);
   }
-
   .result-badge {
     background: rgba(184,240,96,0.15);
     color: var(--accent);
@@ -344,38 +255,29 @@
     border-radius: 20px;
     border: 1px solid rgba(184,240,96,0.3);
   }
-
   .result-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 28px;
     margin-bottom: 16px;
-    transition: border-color 0.2s;
     animation: fadeUp 0.4s ease forwards;
     opacity: 0;
   }
-
   .result-card:nth-child(2) { animation-delay: 0.1s; }
   .result-card:nth-child(3) { animation-delay: 0.2s; }
   .result-card:nth-child(4) { animation-delay: 0.3s; }
-
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
-  .result-card:hover {
-    border-color: rgba(184,240,96,0.3);
-  }
-
+  .result-card:hover { border-color: rgba(184,240,96,0.3); }
   .card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 16px;
   }
-
   .card-type {
     font-size: 11px;
     font-weight: 700;
@@ -383,7 +285,6 @@
     color: var(--accent);
     text-transform: uppercase;
   }
-
   .copy-btn {
     background: var(--surface2);
     border: 1px solid var(--border);
@@ -395,18 +296,12 @@
     cursor: pointer;
     transition: all 0.2s;
   }
-
-  .copy-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
+  .copy-btn:hover { border-color: var(--accent); color: var(--accent); }
   .copy-btn.copied {
     background: rgba(184,240,96,0.1);
     border-color: var(--accent);
     color: var(--accent);
   }
-
   .card-content {
     font-size: 15px;
     line-height: 1.8;
@@ -414,44 +309,6 @@
     font-weight: 300;
     white-space: pre-wrap;
   }
-
-  /* API 키 입력 */
-  .api-section {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px 24px;
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .api-label {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--text-muted);
-    white-space: nowrap;
-    letter-spacing: 0.5px;
-  }
-
-  .api-input {
-    flex: 1;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 13px;
-    font-family: monospace;
-    color: var(--text);
-    outline: none;
-  }
-
-  .api-input:focus {
-    border-color: var(--accent);
-  }
-
-  /* 에러 */
   .error-box {
     display: none;
     background: rgba(255,80,80,0.08);
@@ -462,10 +319,7 @@
     color: #ff8080;
     margin-bottom: 16px;
   }
-
   .error-box.show { display: block; }
-
-  /* 푸터 */
   footer {
     text-align: center;
     padding: 48px 0 32px;
@@ -474,24 +328,16 @@
     border-top: 1px solid var(--border);
     margin-top: 48px;
   }
-
-  footer a {
-    color: var(--accent);
-    text-decoration: none;
-  }
-
-  /* 반응형 */
+  footer a { color: var(--accent); text-decoration: none; }
   @media (max-width: 600px) {
     .form-grid { grid-template-columns: 1fr; }
     .form-grid.three { grid-template-columns: 1fr 1fr; }
     .tone-grid { grid-template-columns: repeat(2, 1fr); }
     .form-section { padding: 20px; }
-    .api-section { flex-direction: column; align-items: flex-start; }
   }
 </style>
 </head>
 <body>
-
 <div class="container">
   <header>
     <div class="logo">
@@ -502,16 +348,8 @@
     <p class="subtitle">매물 정보를 입력하면 30초 안에 3가지 버전의 전문 설명문을 자동 생성합니다.</p>
   </header>
 
-  <!-- API 키 입력 -->
-  <div class="api-section">
-    <span class="api-label">OpenAI API Key</span>
-    <input type="password" class="api-input" id="apiKey" placeholder="sk-..." />
-  </div>
-
-  <!-- 폼 -->
   <div class="form-section">
     <div class="section-label">매물 정보</div>
-
     <div class="form-grid" style="margin-bottom:16px">
       <div class="field">
         <label>위치</label>
@@ -522,7 +360,6 @@
         <input type="text" id="price" placeholder="5억" />
       </div>
     </div>
-
     <div class="form-grid three" style="margin-bottom:16px">
       <div class="field">
         <label>면적</label>
@@ -545,7 +382,6 @@
         </select>
       </div>
     </div>
-
     <div class="form-grid three" style="margin-bottom:16px">
       <div class="field">
         <label>방 수</label>
@@ -560,12 +396,10 @@
         <input type="text" id="moveIn" placeholder="즉시입주" />
       </div>
     </div>
-
     <div class="field" style="margin-bottom:24px">
       <label>특이사항 (장점, 옵션 등)</label>
       <textarea id="features" placeholder="바다뷰, 풀옵션, 주차 2대, 신축 등"></textarea>
     </div>
-
     <div class="section-label">설명문 톤 선택</div>
     <div class="tone-grid">
       <button class="tone-btn active" data-tone="감성적" onclick="selectTone(this)">
@@ -589,7 +423,6 @@
     ⚡ 설명문 자동 생성
   </button>
 
-  <!-- 로딩 -->
   <div class="loading" id="loading">
     <div class="loading-dots">
       <span></span><span></span><span></span>
@@ -597,7 +430,6 @@
     <div class="loading-text">AI가 설명문을 작성하고 있습니다...</div>
   </div>
 
-  <!-- 결과 -->
   <div class="results" id="results" style="margin-top:32px">
     <div class="result-header">
       <div class="result-title">생성 완료</div>
@@ -622,7 +454,6 @@
   }
 
   async function generate() {
-    const apiKey = document.getElementById('apiKey').value.trim();
     const location = document.getElementById('location').value.trim();
     const price = document.getElementById('price').value.trim();
     const area = document.getElementById('area').value.trim();
@@ -635,12 +466,6 @@
 
     const errorBox = document.getElementById('errorBox');
     errorBox.classList.remove('show');
-
-    if (!apiKey) {
-      errorBox.textContent = 'OpenAI API Key를 입력해주세요.';
-      errorBox.classList.add('show');
-      return;
-    }
 
     if (!location || !price) {
       errorBox.textContent = '위치와 가격은 필수 입력 항목입니다.';
@@ -676,64 +501,34 @@
 [출력 규칙]
 - 매번 다른 문체와 시작 문구 사용
 - 이전과 동일한 표현 절대 반복 금지
-- 지정된 톤을 철저히 반영
 
-[출력 형식 - 반드시 이 형식으로]
+[출력 형식]
 ###짧은버전###
-(100자 내외, 핵심만 임팩트 있게)
+(100자 내외)
 ###끝###
 
 ###표준버전###
-(300자 내외, 장점 강조, 자연스럽게)
+(300자 내외)
 ###끝###
 
 ###블로그버전###
-(600자 내외, 스토리텔링, 감성적으로)
+(600자 내외)
 ###끝###`;
 
     try {
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
+      const response = await fetch('/api/generate', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-api-key': apiKey,
-          'anthropic-version': '2023-06-01'
-        },
-        body: JSON.stringify({
-          model: 'claude-opus-4-20250514',
-          max_tokens: 2000,
-          messages: [{ role: 'user', content: prompt }]
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt })
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        // OpenAI API로 fallback
-        const oaRes = await fetch('https://api.openai.com/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`
-          },
-          body: JSON.stringify({
-            model: 'gpt-4o-mini',
-            max_tokens: 2000,
-            messages: [{ role: 'user', content: prompt }]
-          })
-        });
-
-        if (!oaRes.ok) {
-          const err = await oaRes.json();
-          throw new Error(err.error?.message || 'API 오류');
-        }
-
-        const oaData = await oaRes.json();
-        const text = oaData.choices[0].message.content;
-        showResults(text);
-      } else {
-        const data = await response.json();
-        const text = data.content[0].text;
-        showResults(text);
+        throw new Error(data.error || 'API 오류가 발생했습니다.');
       }
+
+      showResults(data.result);
 
     } catch (err) {
       errorBox.textContent = '오류: ' + err.message;
